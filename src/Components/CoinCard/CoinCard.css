@@ -1,0 +1,133 @@
+a {
+  width: 100%;
+}
+
+.all-coin-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border: 2px solid var(--gray);
+  border-radius: 10px;
+  background-color: var(--white);
+  width: 95%;
+  margin: 10px auto;
+}
+
+.all-name-section {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.all-name-section .coin-img {
+  width: 10%;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.all-name-section .coin-symbol {
+  width: 20%;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1.15rem;
+  font-family: var(--text-font);
+}
+
+.all-name-section .coin-name {
+  width: 50%;
+  font-size: 1.35rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+
+.all-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+.all-price-section .coin-price {
+  font-size: 1.35rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  width: 60%;
+}
+
+.all-price-section .coin-total-volume {
+  font-size: 1.15rem;
+  font-family: var(--text-font);
+  font-weight: 500;
+  width: 40%;
+}
+
+/* Top Coin Section */
+
+.top-coin-card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 5px 20px;
+  border: 2px solid var(--gray);
+  border-radius: 10px;
+  background-color: var(--white);
+  width: 80%;
+  margin: 10px auto;
+}
+
+.top-name-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.top-name-section .coin-img {
+  width: 35%;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid var(--black);
+  border-radius: 50%;
+}
+
+.top-name-section .coin-symbol {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.top-name-section .coin-name {
+  font-size: 1.35rem;
+}
+
+.top-price-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 10px 0px;
+}
+
+.top-price-section .coin-price {
+  width: 100%;
+  font-size: 1.35rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.top-price-section .coin-total-volume {
+  width: 100%;
+  font-size: 1.15rem;
+  font-family: var(--text-font);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}

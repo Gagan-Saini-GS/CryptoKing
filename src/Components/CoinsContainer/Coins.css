@@ -1,0 +1,59 @@
+.market-section {
+  margin: 20px 0px 0px;
+}
+
+.market-section .all-coins {
+  padding-left: 20px;
+}
+
+.market-section .coin-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heading-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 10px;
+  position: sticky;
+  top: 74px;
+  background-color: #ffffff;
+}
+
+.filter-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  padding-left: 25px;
+}
+
+.all-coins {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--heading-font);
+}
+
+.filter-section select {
+  padding: 5px 10px;
+  color: var(--white);
+  background-color: var(--black);
+  border: 2px solid var(--black);
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+.info-section {
+  width: 37%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.info-section div {
+  width: 50%;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}

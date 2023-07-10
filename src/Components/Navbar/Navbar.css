@@ -1,0 +1,51 @@
+.navbar-container {
+  border-bottom: 4px solid var(--gray);
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+
+.logo-section .logo-img {
+  width: 16%;
+  border: 1px solid;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+
+.logo-section .company-name {
+  font-size: 1.5rem;
+  font-family: var(--heading-font);
+  font-weight: 600;
+  color: var(--black);
+}
+
+.menu-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+  padding: 2px 5px;
+}
+
+.menu-item {
+  margin: 0px 5px;
+  font-size: 1.25rem;
+  list-style-type: none;
+  padding: 10px;
+  font-family: var(--text-font);
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  color: var(--dark-gray);
+}

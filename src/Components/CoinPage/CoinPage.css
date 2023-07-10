@@ -1,0 +1,163 @@
+.coin-page-container {
+  padding: 50px 10px;
+}
+
+.top-section {
+  width: 80%;
+  /* margin: 0px auto; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.top-section img {
+  width: 35%;
+  padding: 15px;
+  border: 5px solid var(--dark-gray);
+  background-color: var(--gray);
+  border-radius: 10px;
+}
+
+.coin-info-section {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-info-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  padding: 5px;
+}
+
+.coin-info-item .coin-info-item-key {
+  width: 35%;
+}
+
+.coin-info-item .coin-info-item-value {
+  width: 65%;
+}
+
+.symbol {
+  text-transform: uppercase;
+}
+
+.coin-price-range-section {
+  width: 65%;
+  margin-top: 50px;
+  padding: 5px;
+}
+
+.line-text {
+  padding: 0px 5px;
+}
+
+.line {
+  width: 100%;
+  margin: 5px 0px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  background: var(--gray);
+  outline: none;
+  opacity: 0.8;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: var(--dark-gray);
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  /* visibility: hidden; */
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.slider::-webkit-slider-thumb:hover + .tooltiptext {
+  /* visibility: visible; */
+  background-color: red;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.price-range span {
+  opacity: 0.8;
+}
+
+.btn-section {
+  width: 65%;
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-section .btn {
+  width: 40%;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid var(--black);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-btn {
+  background-color: var(--green);
+}
+
+.sell-btn {
+  background-color: var(--red);
+}
+
+.middle-section {
+  padding: 10px;
+  margin: 35px 0px;
+}
+
+.middle-section .description a {
+  color: blue;
+  text-decoration: underline;
+}

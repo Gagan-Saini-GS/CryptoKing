@@ -157,7 +157,33 @@
   margin: 35px 0px;
 }
 
+.middle-section h2 {
+  margin-bottom: 15px;
+}
+
 .middle-section .description a {
   color: blue;
   text-decoration: underline;
+}
+
+.other-info-section {
+  padding: 5px 10px;
+}
+
+.other-info-section h2 {
+  margin-bottom: 15px;
+}
+
+.other-info-item {
+  font-size: 1.25rem;
+  font-family: var(--text-font);
+}
+
+.other-info-item span {
+  margin-right: 20px;
+}
+
+.other-info-item-value {
+  font-weight: 600;
+  display: inline-block;
 }

@@ -131,3 +131,61 @@ a {
   justify-content: space-between;
   margin-top: 5px;
 }
+
+/* Reponsiveness */
+@media (min-width: 200px) and (max-width: 450px) {
+  .top-coin-card-container {
+    padding: 0;
+    margin: 0;
+    width: 98%;
+  }
+
+  .top-name-section .coin-name {
+    font-size: 1rem;
+  }
+
+  .top-price-section .coin-price {
+    font-size: 0.75rem;
+  }
+
+  .top-price-section .coin-total-volume {
+    font-size: 0.5rem;
+  }
+
+  .all-coin-card-container {
+    padding: 5px;
+    width: 95%;
+    border-radius: 4px;
+  }
+
+  .all-name-section {
+    width: 55%;
+  }
+
+  .all-price-section {
+    width: 45%;
+  }
+
+  .all-price-section .coin-price {
+    text-align: right;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .all-price-section .coin-total-volume {
+    display: none;
+  }
+
+  .all-name-section .coin-img {
+    margin-right: 10px;
+  }
+
+  .all-name-section .coin-name {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+
+  .all-coin-card-container .all-name-section .coin-symbol {
+    display: none;
+  }
+}

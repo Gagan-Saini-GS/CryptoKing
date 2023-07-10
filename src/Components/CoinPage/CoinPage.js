@@ -12,7 +12,7 @@ export default function CoinPage() {
     axios
       .get("https://api.coingecko.com/api/v3/coins/" + params?.coinId)
       .then((response) => {
-        // console.log(response.data);
+        console.log(response.data);
         setCoin(response.data);
 
         // Calculating the position of tool tip according to low price, current price, high price
@@ -22,7 +22,7 @@ export default function CoinPage() {
         calculateLeftPosition(low, curr, high);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [params?.coinId]);
 
   function calculateLeftPosition(low, curr, high) {
     let percentage = (curr - low) / (high - low);
@@ -71,11 +71,9 @@ export default function CoinPage() {
               <input
                 type="range"
                 className="slider"
-                min={10000000000 * coin?.market_data?.low_24h?.inr}
-                max={10000000000 * coin?.market_data?.high_24h?.inr}
-                value={
-                  10000000000 * coin?.market_data?.current_price?.inr || ""
-                }
+                min={"" + 10000000000 * coin?.market_data?.low_24h?.inr}
+                max={"" + 10000000000 * coin?.market_data?.high_24h?.inr}
+                value={"" + 10000000000 * coin?.market_data?.current_price?.inr}
                 readOnly={true}
               />
             </div>
@@ -105,6 +103,43 @@ export default function CoinPage() {
             ></p>
           </>
         )}
+      </div>
+      <div className="other-info-section">
+        <h2>Data analysis of {coin?.name}</h2>
+        <div className="other-info-item">
+          Price change in a day{" "}
+          <p className="other-info-item-value">
+            {coin?.market_data?.price_change_24h < 0 ? (
+              <span style={{ color: "#ff524c" }}>
+                ₹ {coin?.market_data?.price_change_24h.toFixed(10)}
+              </span>
+            ) : (
+              <span style={{ color: "#1fd895" }}>
+                ₹ {coin?.market_data?.price_change_24h.toFixed(10)}
+              </span>
+            )}
+          </p>
+        </div>
+        <div className="other-info-item">
+          Market Capitalization change in a day{" "}
+          <p className="other-info-item-value">
+            {Math.floor(coin?.market_data?.market_cap_change_24h) < 0 ? (
+              <span style={{ color: "#ff524c" }}>
+                ₹ {Math.floor(coin?.market_data?.market_cap_change_24h)}
+              </span>
+            ) : (
+              <span style={{ color: "#1fd895" }}>
+                ₹ {Math.floor(coin?.market_data?.market_cap_change_24h)}
+              </span>
+            )}
+          </p>
+        </div>
+        <div className="other-info-item">
+          Market Capitalization Rank{" "}
+          <p className="other-info-item-value">
+            {coin?.market_data?.market_cap_rank + ""}
+          </p>
+        </div>
       </div>
     </div>
   );

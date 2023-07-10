@@ -30,8 +30,8 @@ export default function CoinCard({ coin, type }) {
             }
           >
             <div className="coin-price">
-              {type === "top" && <div className="price-heading">Price</div>}
-              {coin?.current_price} /-
+              {type === "top" && <div className="price-heading">Price</div>}₹{" "}
+              {coin?.current_price}
             </div>
             <div className="coin-total-volume">
               {type === "top" && <div className="price-heading">Volume</div>}{" "}

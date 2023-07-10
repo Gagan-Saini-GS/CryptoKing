@@ -3,6 +3,7 @@
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   position: sticky;
   top: 0px;
@@ -29,12 +30,51 @@
   color: var(--black);
 }
 
+.right-section {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .menu-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 30%;
+  width: 53%;
   padding: 2px 5px;
+}
+
+.search-container {
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  width: 90%;
+  padding: 5px;
+  font-size: 1rem;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  border-right: none;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  outline: none;
+}
+
+.search-container img {
+  width: 8%;
+  background-color: var(--white);
+  border: 2px solid var(--black);
+  border-left: none;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding: 4px;
 }
 
 .menu-item {
@@ -48,4 +88,28 @@
 .menu-item:hover {
   cursor: pointer;
   color: var(--dark-gray);
+}
+
+@media (min-width: 200px) and (max-width: 450px) {
+  .navbar-container {
+    padding: 5px;
+    border-bottom: 2px solid var(--gray);
+  }
+
+  .logo-section {
+    width: 85%;
+  }
+
+  .logo-section .logo-img {
+    width: 12%;
+    margin-right: 12px;
+  }
+
+  .logo-section .company-name {
+    font-size: 1.25rem;
+  }
+
+  .right-section {
+    display: none;
+  }
 }

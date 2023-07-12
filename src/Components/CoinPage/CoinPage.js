@@ -30,7 +30,7 @@ export default function CoinPage() {
     // const newPos = Math.ceil(percentage * 360) + "px"; // Same but I perfered below one
 
     percentage = percentage * 100;
-    const newPos = (percentage / 100) * 410 + "px";
+    const newPos = (percentage / 100) * 444 + "px";
 
     setPosLeft(newPos);
   }

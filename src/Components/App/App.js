@@ -3,7 +3,7 @@ import Coins from "../CoinsContainer/Coins";
 import Navbar from "../Navbar/Navbar";
 import "./App.css";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate,

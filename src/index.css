@@ -18,7 +18,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0px 100px;
+  padding: 0px 50px;
 }
 
 code {
@@ -48,5 +48,17 @@ a {
 @media (min-width: 200px) and (max-width: 450px) {
   body {
     padding: 5px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 800px) {
+  body {
+    padding: 5px 10px;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  body {
+    padding: 5px 15px;
   }
 }

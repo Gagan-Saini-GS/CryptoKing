@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -12,11 +12,31 @@ export default function Navbar() {
     setSearchTxt("");
   }
 
+  function showMenuSection() {
+    const top = document.querySelector(".right-section").style;
+    console.log(top);
+
+    if (top === "-300px") {
+      document.querySelector(".right-section").style.display = "flex";
+    } else {
+      document.querySelector(".right-section").style.display = "none";
+    }
+  }
+
+  // useEffect(() => {
+  //   // Fire an event at window resize
+  // }, []);
+
   return (
     <div className="navbar-container">
       <div className="logo-section">
         <img src="/images/logo.png" alt="logo" className="logo-img" />
         <div className="company-name">Crypto King</div>
+      </div>
+      <div className="menu-bar-container">
+        <div className="menu-bar"></div>
+        <div className="menu-bar"></div>
+        <div className="menu-bar"></div>
       </div>
       <div className="right-section">
         <div className="search-container">

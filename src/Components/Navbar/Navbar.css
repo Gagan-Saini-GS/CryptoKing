@@ -50,7 +50,7 @@
   height: fit-content;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .search-input {
@@ -74,7 +74,7 @@
   border-radius: 5px;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  padding: 4px;
+  padding: 5px;
 }
 
 .menu-item {
@@ -87,7 +87,22 @@
 
 .menu-item:hover {
   cursor: pointer;
-  color: var(--dark-gray);
+  color: var(--green);
+}
+
+.menu-bar-container {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+}
+
+.menu-bar {
+  width: 30px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: var(--gray);
 }
 
 @media (min-width: 200px) and (max-width: 450px) {
@@ -110,6 +125,98 @@
   }
 
   .right-section {
-    display: none;
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+    transition: all 1s;
+  }
+
+  .right-section .search-container {
+    margin: 5px auto;
+    width: 90%;
+  }
+
+  .right-section .menu-section {
+    width: 100%;
+    padding: 5px 0px;
+    flex-wrap: wrap;
+  }
+
+  .menu-bar-container {
+    display: flex;
+  }
+
+  .menu-bar-container:hover + .right-section {
+    left: 0px;
+  }
+
+  .right-section:hover {
+    left: 0px;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 1000px) {
+  .navbar-container {
+    padding: 5px;
+    border-bottom: 2px solid var(--gray);
+  }
+
+  .logo-section {
+    width: 35%;
+  }
+
+  .logo-section .logo-img {
+    width: 12%;
+    margin-right: 12px;
+  }
+
+  .logo-section .company-name {
+    font-size: 1.25rem;
+  }
+
+  .right-section {
+    position: absolute;
+    top: 40px;
+    left: -100%;
+    transition: all 1s;
+    width: 100%;
+    background-color: var(--white);
+    flex-direction: column;
+  }
+
+  .right-section .search-container {
+    margin: 5px auto;
+    width: 60%;
+  }
+
+  .right-section .menu-section {
+    width: 100%;
+    padding: 5px 0px;
+    flex-wrap: wrap;
+  }
+
+  .menu-bar-container {
+    display: flex;
+  }
+
+  .menu-bar-container:hover + .right-section {
+    left: 0px;
+  }
+
+  .right-section:hover {
+    left: 0px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1500px) {
+  .logo-section {
+    width: 30%;
+  }
+
+  .right-section {
+    width: 70%;
   }
 }

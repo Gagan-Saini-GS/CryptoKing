@@ -133,7 +133,7 @@ a {
 }
 
 /* Reponsiveness */
-@media (min-width: 200px) and (max-width: 450px) {
+@media (min-width: 200px) and (max-width: 700px) {
   .top-coin-card-container {
     padding: 0;
     margin: 0;
@@ -149,7 +149,8 @@ a {
   }
 
   .top-price-section .coin-total-volume {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 600;
   }
 
   .all-coin-card-container {
@@ -187,5 +188,44 @@ a {
 
   .all-coin-card-container .all-name-section .coin-symbol {
     display: none;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+  a {
+    width: 23%;
+  }
+
+  .top-coin-card-container {
+    width: 95%;
+    padding: 5px;
+  }
+
+  .top-price-section {
+    width: 98%;
+  }
+
+  .top-price-section .coin-price {
+    font-size: 1rem;
+  }
+
+  .top-price-section .coin-total-volume {
+    font-size: 0.75rem;
+  }
+
+  .all-name-section {
+    width: 50%;
+  }
+
+  .all-price-section {
+    width: 40%;
+  }
+
+  .all-price-section .coin-price {
+    width: 50%;
+  }
+
+  .all-price-section .coin-total-volume {
+    width: 50%;
   }
 }

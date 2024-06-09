@@ -29,11 +29,12 @@ code {
 :root {
   --black: #181818;
   --red: #ff524c;
-  --green: #1fd895;
+  --green: #19ba92;
   --blue: #283963;
   --white: #f0f3f6;
   --gray: #848a98;
   --dark-gray: #3a3b3c;
+  --light: #dfdfdf;
 
   /* Fonts */
   --heading-font: "Montserrat", sans-serif;

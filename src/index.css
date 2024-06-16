@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +22,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0px 50px;
 }
 
 code {
@@ -27,39 +30,71 @@ code {
 }
 
 :root {
-  --black: #181818;
-  --red: #ff524c;
-  --green: #19ba92;
-  --blue: #283963;
-  --white: #f0f3f6;
-  --gray: #848a98;
-  --dark-gray: #3a3b3c;
-  --light: #dfdfdf;
-
-  /* Fonts */
-  --heading-font: "Montserrat", sans-serif;
-  --text-font: "Roboto Mono", monospace;
+  --White: #ffffff;
+  --Black: #17181c;
+  --Blue: #3874ff;
+  --Red: #d55438;
+  --Green: #0bab86;
+  --Gray: #23252f;
+  --Darkblack: #131315;
+  --LightGray: #b1b5c3;
 }
 
-a {
-  text-decoration: none;
-  color: var(--black);
+.no-padding .ant-list-item {
+  padding: 0;
 }
 
-@media (min-width: 200px) and (max-width: 450px) {
-  body {
-    padding: 5px;
-  }
+/* Custom styles for the Pagination component */
+.custom-pagination .ant-pagination {
+  background-color: var(--Black);
+  padding: 10px;
+  border-radius: 4px;
 }
 
-@media (min-width: 450px) and (max-width: 800px) {
-  body {
-    padding: 5px 10px;
-  }
+/* Style the page numbers */
+.custom-pagination .ant-pagination-item {
+  border-color: var(--Gray);
+  color: var(--Gray);
 }
 
-@media (min-width: 800px) and (max-width: 1200px) {
-  body {
-    padding: 5px 15px;
+/* Style the active page number */
+.custom-pagination .ant-pagination-item-active {
+  background-color: transparent;
+  color: var(--Blue);
+  border-color: var(--Blue);
+}
+
+/* Style the page numbers' text color */
+.custom-pagination .ant-pagination-item a {
+  color: var(--White);
+}
+
+/* Style the active page number's text color */
+.custom-pagination .ant-pagination-item-active a {
+  color: var(--White);
+}
+
+.custom-pagination
+  .ant-pagination-jump-next
+  .ant-pagination-item-container
+  .ant-pagination-item-ellipsis {
+  color: var(--White);
+}
+
+/* Style the pagination arrows */
+.custom-pagination .ant-pagination-prev,
+.custom-pagination .ant-pagination-next {
+  color: var(--Blue);
+  background-color: var(--White);
+}
+
+.custom-pagination .ant-pagination-prev a,
+.custom-pagination .ant-pagination-next a {
+  color: var(--White);
+}
+
+@media (max-width: 465px) {
+  .custom-pagination .ant-pagination {
+    padding: 4px;
   }
 }

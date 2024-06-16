@@ -68,7 +68,7 @@
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  background: var(--gray);
+  background: var(--White);
   outline: none;
   opacity: 0.8;
   border-radius: 50px;
@@ -79,7 +79,7 @@
   appearance: none;
   width: 10px;
   height: 10px;
-  background: var(--dark-gray);
+  background: var(--Gray);
   cursor: pointer;
   border-radius: 20px;
 }
@@ -87,14 +87,13 @@
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+  border-bottom: 2px solid var(--White);
 }
 
 .tooltip .tooltiptext {
-  /* visibility: hidden; */
   width: 120px;
-  background-color: black;
-  color: #fff;
+  background-color: var(--Gray);
+  color: var(--White);
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;

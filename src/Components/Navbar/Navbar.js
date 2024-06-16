@@ -1,69 +1,45 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
+import React, { useState } from "react";
+import Logo from "../../assets/images/usd-coin.png";
 import { Link, useNavigate } from "react-router-dom";
+import SearchBar from "../common/SearchBar";
 
 export default function Navbar() {
   const [searchTxt, setSearchTxt] = useState("");
   const navigate = useNavigate();
 
-  function searchCoin() {
+  const searchCoin = () => {
     navigate("/coin/" + searchTxt.toLowerCase());
-
     setSearchTxt("");
-  }
-
-  function showMenuSection() {
-    const top = document.querySelector(".right-section").style;
-    console.log(top);
-
-    if (top === "-300px") {
-      document.querySelector(".right-section").style.display = "flex";
-    } else {
-      document.querySelector(".right-section").style.display = "none";
-    }
-  }
-
-  // useEffect(() => {
-  //   // Fire an event at window resize
-  // }, []);
+  };
 
   return (
-    <div className="navbar-container">
-      <div className="logo-section">
-        <img src="/images/logo.png" alt="logo" className="logo-img" />
-        <div className="company-name">Crypto King</div>
-      </div>
-      <div className="menu-bar-container">
-        <div className="menu-bar"></div>
-        <div className="menu-bar"></div>
-        <div className="menu-bar"></div>
-      </div>
-      <div className="right-section">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search Coin"
-            value={searchTxt}
-            className="search-input"
-            onChange={(e) => setSearchTxt(e.target.value)}
-          />
-          <img src="/images/search3.png" alt="" onClick={searchCoin} />
+    <nav
+      className="bg-Darkblack flex justify-between items-center h-16 md:h-20 px-4 sm:px-8 md:px-16 lg:px-24 sticky top-0 z-50"
+      style={{ boxShadow: "0 0 10px 0 rgba(255, 255, 255, 0.15)" }}
+    >
+      <div className="flex items-center">
+        <img className="h-8 w-auto mr-4" src={Logo} alt="Logo" />
+        <div className="text-sm md:text-base lg:text-xl font-bold text-White">
+          Crypto King
         </div>
-        <ul className="menu-section">
-          <Link to={"/"}>
-            <li className="menu-item">Home</li>
-          </Link>
-          <Link to={"/allcoins"}>
-            <li className="menu-item">Coins</li>
-          </Link>
-          <Link to={"/about"}>
-            <li className="menu-item">About</li>
-          </Link>
-          <Link to={"/contact"}>
-            <li className="menu-item">Contact</li>
-          </Link>
-        </ul>
       </div>
-    </div>
+      <div className="flex space-x-4 items-center">
+        <SearchBar
+          searchTxt={searchTxt}
+          setSearchTxt={setSearchTxt}
+          searchCoin={searchCoin}
+        />
+        <Link to={"/"}>
+          <div className="text-White hover:text-Blue text-sm md:text-base lg:text-xl font-medium">
+            Home
+          </div>
+        </Link>
+        <Link to={"/allcoins"}>
+          <div className="text-White hover:text-Blue text-sm md:text-base lg:text-xl font-medium">
+            Coins
+          </div>
+        </Link>
+      </div>
+    </nav>
   );
 }

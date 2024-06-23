@@ -14,7 +14,7 @@ const HowItWorks = () => {
           manage the creation of new digital currency units.
         </div>
       </div>
-      <div className="pt-4 sm:pt-8 md:pt-16 lg:pt-24 flex flex-wrap items-center gap-4 lg:gap-8 w-full">
+      <div className="pt-4 sm:pt-8 md:pt-16 lg:pt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 w-full">
         {HowItWorkSteps.map((step) => {
           return (
             <HowItWorkStepCard
@@ -22,7 +22,6 @@ const HowItWorks = () => {
               image={step.image}
               title={step.title}
               description={step.description}
-              stepNumber={step.step}
             />
           );
         })}

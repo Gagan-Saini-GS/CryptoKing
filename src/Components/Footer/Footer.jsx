@@ -26,10 +26,10 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex flex-wrap md:flex-row gap-10 md:justify-between w-full lg:w-3/5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:justify-between w-full lg:w-3/5">
         {FooterOptions.map((option) => {
           return (
-            <div className="w-full xs:w-[44%] lg:w-1/5">
+            <div className="">
               <div className="uppercase font-medium text-lg pb-2">
                 {option.title}
               </div>

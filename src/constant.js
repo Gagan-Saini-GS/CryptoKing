@@ -28,35 +28,32 @@ export const FilterNavOptions = [
 
 export const HowItWorkSteps = [
   {
-    id: "download",
-    title: "Download",
-    description: "Get the app from our website or your preferred app store.",
+    id: "global",
+    title: "Global",
+    description:
+      "Enables seamless cross-border transactions without the need for intermediaries.",
     image: DownloadImage,
-    step: "1",
   },
   {
-    id: "connectwallet",
-    title: "Connect Wallet",
+    id: "transparency",
+    title: "Transparency",
     description:
-      "Link your digital wallet to the app for seamless transactions.",
+      "Blockchain technology ensures transparent and immutable transaction records.",
     image: ConnectWalletImage,
-    step: "2",
   },
   {
-    id: "trade",
-    title: "Start Trading",
+    id: "decentralization",
+    title: "Decentralization",
     description:
-      "Buy, sell, and trade a variety of cryptocurrencies with ease.",
+      "Operates without a central authority, offering more autonomy.",
     image: TradeImage,
-    step: "3",
   },
   {
-    id: "earn",
-    title: "Earn Money",
+    id: "investment",
+    title: "Investment",
     description:
-      "Watch your investments grow and manage your earnings directly in the app.",
+      "It offers the chance to participate in an emerging financial technology.",
     image: EarnImage,
-    step: "4",
   },
 ];
 

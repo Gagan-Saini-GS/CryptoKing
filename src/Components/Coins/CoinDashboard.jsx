@@ -20,7 +20,7 @@ const CoinDashboardCard = ({
 
   return (
     <div
-      className={`p-4 rounded-xl hover:bg-Gray w-full md:w-2/5 lg:w-1/5 h-36 cursor-pointer ${
+      className={`p-4 rounded-xl hover:bg-Gray h-36 cursor-pointer ${
         active && "bg-Gray"
       }`}
       style={{ boxShadow: "0 0 10px 0 rgba(255,255,255,0.1)" }}
@@ -80,7 +80,7 @@ const CoinDashboard = ({ topCoins, changeFilter }) => {
         coinArr={coinArr}
         setCoinArr={setCoinArr}
       />
-      <div className="flex flex-wrap items-center gap-4 md:gap-10 pt-4 md:pt-5 md:pb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pt-4 md:pt-5 md:pb-4">
         {coinArr.map((coin) => (
           <CoinDashboardCard
             key={coin.id}

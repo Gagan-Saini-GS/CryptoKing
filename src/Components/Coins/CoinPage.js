@@ -142,8 +142,15 @@ export default function CoinPage() {
                     }`}
                   >
                     $
+                    {coin?.market_data?.market_cap_change_24h < 0 && (
+                      <span className="text-Red" style={{ margin: "0" }}>
+                        -
+                      </span>
+                    )}
                     {formatNumber(
-                      Math.floor(coin?.market_data?.market_cap_change_24h)
+                      Math.floor(
+                        Math.abs(coin?.market_data?.market_cap_change_24h)
+                      )
                     )}
                   </span>
                 </p>

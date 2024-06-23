@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const SearchBar = ({ searchTxt, setSearchTxt, searchCoin }) => {
+const SearchBar = ({
+  searchTxt,
+  setSearchTxt,
+  searchCoin,
+  fetchSuggestions,
+}) => {
+  const [suggestions, setSuggestions] = useState([]);
+
+  useEffect(() => {
+    if (searchTxt) {
+      fetchSuggestions(searchTxt).then((res) => setSuggestions(res));
+    } else {
+      setSuggestions([]);
+    }
+  }, [searchTxt, fetchSuggestions]);
+
   return (
     <div>
       <div className="relative flex items-center">
@@ -9,16 +24,17 @@ const SearchBar = ({ searchTxt, setSearchTxt, searchCoin }) => {
           onChange={(e) => setSearchTxt(e.target.value)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              searchCoin();
+              searchCoin(searchTxt);
             }
           }}
           type="text"
           placeholder="Search..."
-          className="hidden md:block rounded-full px-4 py-1 border border-White focus:outline-none focus:ring-2 focus:ring-Blue w-full"
+          className="hidden md:block rounded px-4 py-1 border border-White focus:outline-none focus:ring-2 focus:ring-Blue w-full"
         />
         <button
           type="button"
           className="absolute right-0 md:right-3 top-1/2 transform -translate-y-1/2"
+          onClick={() => searchCoin(searchTxt)}
         >
           <svg
             className="h-5 w-5 text-Blue"
@@ -33,6 +49,22 @@ const SearchBar = ({ searchTxt, setSearchTxt, searchCoin }) => {
           </svg>
         </button>
       </div>
+      {suggestions.length > 0 && (
+        <div className="absolute bg-Black text-White border border-gray-300 rounded mt-0.5 w-[212px] max-h-60 overflow-y-auto z-10">
+          {suggestions.map((suggestion, index) => (
+            <div
+              key={index}
+              className="p-2 cursor-pointer hover:bg-gray-200/10"
+              onClick={() => {
+                setSearchTxt(suggestion.name);
+                searchCoin(suggestion.id);
+              }}
+            >
+              {suggestion.name}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

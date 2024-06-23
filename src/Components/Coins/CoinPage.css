@@ -1,5 +1,6 @@
 .coin-page-container {
   padding: 50px 96px 7px;
+  background-color: var(--Black);
 }
 
 .top-section {

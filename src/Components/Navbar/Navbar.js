@@ -12,6 +12,19 @@ export default function Navbar() {
     setSearchTxt("");
   };
 
+  const handleSmoothScroll = (e) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute("href").slice(1);
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 100,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <nav
       className="bg-Darkblack flex justify-between items-center h-16 md:h-20 px-4 sm:px-8 md:px-16 lg:px-24 sticky top-0 z-50"
@@ -29,16 +42,16 @@ export default function Navbar() {
           setSearchTxt={setSearchTxt}
           searchCoin={searchCoin}
         />
-        <Link to={"/"}>
+        <a href="#home" onClick={handleSmoothScroll}>
           <div className="text-White hover:text-Blue text-sm md:text-base lg:text-xl font-medium">
             Home
           </div>
-        </Link>
-        <Link to={"/allcoins"}>
+        </a>
+        <a href="#cointable" onClick={handleSmoothScroll}>
           <div className="text-White hover:text-Blue text-sm md:text-base lg:text-xl font-medium">
             Coins
           </div>
-        </Link>
+        </a>
       </div>
     </nav>
   );

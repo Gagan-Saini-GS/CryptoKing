@@ -101,16 +101,16 @@ export default function CoinPage() {
                 </div>
               </div>
               <div className="btn-section">
-                <button className="bg-Green font-semibold text-lg uppercase rounded-md px-10 py-2">
+                <button className="bg-Green font-semibold text-base uppercase rounded-md px-10 py-2">
                   buy
                 </button>
-                <button className="bg-Red font-semibold text-lg uppercase rounded-md px-10 py-2">
+                <button className="bg-Red font-semibold text-base uppercase rounded-md px-10 py-2">
                   sell
                 </button>
               </div>
             </div>
             <div className="other-info-section">
-              <div className="text-xl font-semibold">Stats</div>
+              <div className="text-base font-semibold">Stats</div>
               <div className="other-info-item">
                 Market Capitalization Rank{" "}
                 <p className="other-info-item-value">

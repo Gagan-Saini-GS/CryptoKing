@@ -7,14 +7,29 @@ const SearchBar = ({
   fetchSuggestions,
 }) => {
   const [suggestions, setSuggestions] = useState([]);
+  const [isFoucsed, setIsFocused] = useState(false);
 
   useEffect(() => {
     if (searchTxt) {
       fetchSuggestions(searchTxt).then((res) => setSuggestions(res));
+    } else if (isFoucsed) {
+      fetchSuggestions("").then((res) => setSuggestions(res));
     } else {
       setSuggestions([]);
     }
-  }, [searchTxt, fetchSuggestions]);
+  }, [searchTxt, isFoucsed, fetchSuggestions]);
+
+  useEffect(() => {
+    const handleBodyClick = (e) => {
+      if (!e.target.closest(".relative")) {
+        setIsFocused(false);
+      }
+    };
+    document.body.addEventListener("click", handleBodyClick);
+    return () => {
+      document.body.removeEventListener("click", handleBodyClick);
+    };
+  }, []);
 
   return (
     <div>
@@ -22,6 +37,7 @@ const SearchBar = ({
         <input
           value={searchTxt}
           onChange={(e) => setSearchTxt(e.target.value)}
+          onFocus={() => setIsFocused(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               searchCoin(searchTxt);
@@ -49,7 +65,7 @@ const SearchBar = ({
           </svg>
         </button>
       </div>
-      {suggestions.length > 0 && (
+      {suggestions.length > 0 && isFoucsed && (
         <div className="absolute bg-Black text-White border border-gray-300 rounded mt-0.5 w-[212px] max-h-60 overflow-y-auto z-10">
           {suggestions.map((suggestion, index) => (
             <div
@@ -58,6 +74,7 @@ const SearchBar = ({
               onClick={() => {
                 setSearchTxt(suggestion.name);
                 searchCoin(suggestion.id);
+                setIsFocused(false);
               }}
             >
               {suggestion.name}

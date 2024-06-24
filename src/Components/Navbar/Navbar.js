@@ -26,6 +26,16 @@ export default function Navbar({ coins }) {
   };
 
   const fetchSuggestions = (query) => {
+    if (query === "") {
+      return new Promise((resolve) => {
+        const filteredData = coins.filter((item) => {
+          return item?.name.toLowerCase();
+        });
+
+        resolve(filteredData);
+      });
+    }
+
     return new Promise((resolve) => {
       const filteredData = coins.filter((item) => {
         return item?.name.toLowerCase().includes(query.toLowerCase());
